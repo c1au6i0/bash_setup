@@ -8,9 +8,8 @@ call plug#begin('~/.vim/plugged')
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'preservim/nerdcommenter'
 
-
-" Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Multiple Plug commands can be written in a single line using | separators
@@ -40,6 +39,8 @@ call plug#end()
 
 set backspace=indent,eol,start
 
+filetype plugin on
+
 " Theme
 syntax on
 colorscheme desert
@@ -55,5 +56,9 @@ let R_show_args = 1
 " R Window anways vertical
 let R_rconsole_width = 120
 let R_min_editor_width = 120
+
+" nerdcommenter -------------------- 
+let g:NERDSpaceDelims = 1
+
 
 
