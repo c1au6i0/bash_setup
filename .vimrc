@@ -10,6 +10,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'preservim/nerdcommenter'
 
+Plug 'vim-python/python-syntax'
+let g:python_highlight_all = 1
+
+" Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Multiple Plug commands can be written in a single line using | separators
@@ -34,6 +38,10 @@ Plug 'preservim/nerdcommenter'
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
 
+" Vertical Scroll
+set mouse=a
+
+
 " Initialize plugin system
 call plug#end()
 
@@ -46,6 +54,7 @@ syntax on
 colorscheme desert
 
 " NVim-R  --------------------------
+" https://github.com/jamespeapen/Nvim-R
 
 " Assign
 let R_assign_map = '--'
@@ -60,5 +69,9 @@ let R_min_editor_width = 120
 " nerdcommenter -------------------- 
 let g:NERDSpaceDelims = 1
 
-
-
+" Snakemake ------------------------
+" https://github.com/ShaiberAlon/snakemake-vim
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *.rules set syntax=snakemake
+au BufNewFile,BufRead *.snakefile set syntax=snakemake
+au BufNewFile,BufRead *.snake set syntax=snakemake
