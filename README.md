@@ -8,6 +8,7 @@ General Set up:
 - Install [Bioconda](https://github.com/ohmybash/oh-my-bash).
 - Install [mamba](https://github.com/mamba-org/mamba):
 `mamba install xtensor-r -c conda-forge`
+- Install [Shell Integration](https://iterm2.com/documentation-shell-integration.html) and make sure that the hostname in `.bash_profile` is correct.
 - Copy `.bashrc` and `.vimrc` to home directory.
 - Install [vim-plug](https://github.com/junegunn/vim-plug).
 Start `vim` and `:PlugUpdate` to install plugins.

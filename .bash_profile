@@ -10,3 +10,7 @@ fi
 PATH=$PATH:$HOME/.local/bin:$HOME/mybin
 
 export PATH
+
+export iterm2_hostname=scu-vis1.med.cornell.edu
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash" || true
+
