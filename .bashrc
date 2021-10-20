@@ -1,3 +1,5 @@
+export MODULEPATH=/software/apps/modulefiles
+
 # Path to your oh-my-bash installation.
 export OSH=/home/clz4002/.oh-my-bash
 
@@ -96,10 +98,29 @@ source $OSH/oh-my-bash.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-bash
 # users are encouraged to define aliases within the OSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias bashconfig="mate ~/.bashrc"
-# alias ohmybash="mate ~/.oh-my-bash"
+
+# Aliases
+alias desk="cd /athena/marchionnilab/scratch/clz4002/inghirami/pipeline"
+alias nvim="/home/clz4002/squashfs-root/usr/bin/nvim"
+alias lab="/athena/marchionnilab/scratch/lab_data/"
+#ls
+alias dir='ls -hFx'
+alias l.='ls -d .* --color=tty' # short listing, only hidden files - .*
+alias l='ls -lathF'             # long, sort by newest to oldest
+alias L='ls -latrhF'            # long, sort by oldest to newest
+alias la='ls -Al'               # show hidden files
+alias lc='ls -lcr'              # sort by change time
+alias lk='ls -lSr'              # sort by size
+alias lh='ls -lSrh'             # sort by size human readable
+alias lm='ls -al | more'        # pipe through 'more'
+alias lo='ls -laSFh'            # sort by size largest to smallest
+alias lr='ls -lR'               # recursive ls
+alias lt='ls -ltr'              # sort by date
+alias lu='ls -lur'              # sort by access time
+
+
+
+
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/clz4002/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -115,3 +136,14 @@ unset __conda_setup
 
 # <<< conda initialize <<<
 
+# if scu compute, load spack package manager
+if [[ $(hostname) == *"scu-node"* || $(hostname) == *"scu-vis"* ]] ; then
+  if [ -f /software/spack/share/spack/setup-env.sh ] ; then
+    . /software/spack/share/spack/setup-env.sh
+  fi
+fi
+# END ANSIBLE MANAGED BLOCK
+
+spack_my_find () {
+    spack find | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" | grep -E "${1}|-- linux" | sed 's/-- linux/\n-- linux/g'
+}
