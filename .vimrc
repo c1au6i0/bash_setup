@@ -59,8 +59,6 @@ colorscheme desert
 " Assign
 let R_assign_map = '--'
 
-" show arguments for functions during omnicompletion
-let R_show_args = 1
 
 " R Window anways vertical
 let R_rconsole_width = 120
