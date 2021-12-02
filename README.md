@@ -1,15 +1,20 @@
 # BASH and VIM set up
 
-This is just a copy of the `.bashrc` and `.vimrc` files that I used on servers.
+This is an howto for setting up terminal and vim on the cluster.
+Make sure to be logged on the cluster using 2 istances. If you mess up .bashrc and logout you will not be able to log in again.
 
 General Set up:
 
-- Install [oh-my-bash](https://github.com/ohmybash/oh-my-bash).
+
+
 - Install [Bioconda](https://github.com/ohmybash/oh-my-bash).
-- Install [mamba](https://github.com/mamba-org/mamba):
-`mamba install xtensor-r -c conda-forge`
+- Install [mamba](https://github.com/mamba-org/mamba).
+- Install `zsh`: `mamba install zsh`.
+- Install [oh-my-zsh](https://ohmyz.sh/).
+- Install [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh).
 - Install [Shell Integration](https://iterm2.com/documentation-shell-integration.html) and make sure that the hostname in `.bash_profile` is correct.
-- Copy `.bashrc` and `.vimrc` to home directory.
+- Copy `.bashrc`, `.zshrc` and `.vimrc` to home directory.
+- Install `neovim` using `mamba`.
 - Install [vim-plug](https://github.com/junegunn/vim-plug).
 Start `vim` and `:PlugUpdate` to install plugins.
 
