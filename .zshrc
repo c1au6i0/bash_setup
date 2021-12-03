@@ -79,6 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	k
 	composer
 	)
 
@@ -127,3 +128,12 @@ alias lu='ls -lur'              # sort by access time
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Add Path
+PATH=$PATH:$HOME/.local/bin:$HOME/mybin
+export PATH
+
+# Plugins -----
+# Autojump
+[[ -s /home/clz4002/.autojump/etc/profile.d/autojump.sh ]] && source /home/clz4002/.autojump/etc/profile.d/autojump.sh
+

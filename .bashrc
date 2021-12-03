@@ -31,3 +31,4 @@ if [ "$SSH_TTY" ]
 then
    exec /home/clz4002/miniconda3/bin/zsh
 fi
+

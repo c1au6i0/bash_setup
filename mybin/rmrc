@@ -1,0 +1,11 @@
+#!/bin/bash
+TOREMOVE=${1:-.DS_Store  ._.DS_Store}
+
+set -e
+
+for i in ${TOREMOVE[@]}
+do
+	echo "Removing $i..."
+	find . -type f -name $i -exec rm {} +
+done
+echo "Done!"
