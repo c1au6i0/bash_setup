@@ -11,10 +11,15 @@ General Set up:
 - Install [mamba](https://github.com/mamba-org/mamba).
 - Install `zsh`: `mamba install zsh`.
 - Install [oh-my-zsh](https://ohmyz.sh/).
+
+Install oh-my-zsh plugins:
 - Install [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh).
 - Install [Shell Integration](https://iterm2.com/documentation-shell-integration.html) and make sure that the hostname in `.bash_profile` is correct.
 - Install [autojump](https://github.com/c1au6i0/autojump).
 - Install [k](https://github.com/supercrabtree/k)
+- Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md).
+
+
 - Copy `.bashrc`, `.zshrc` and `.vimrc` to home directory.
 - Copy `mybin` in the home.
 - Install `neovim` using `mamba`.
