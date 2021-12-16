@@ -24,6 +24,18 @@ Install oh-my-zsh plugins:
 - Copy `mybin` in the home.
 - Install `neovim` using `mamba`.
 - Install [vim-plug](https://github.com/junegunn/vim-plug).
-Start `vim` and `:PlugUpdate` to install plugins.
+Start `vim` and `:PlugUpdate!` to install plugins.
+
+## Other
+
+In projects where you are using `{renv}` install `nvimcom` using
+`devtools::install("~/.vim/plugged/Nvim-R/R/nvimcom")`
+
+In your .ssh/config in your local machine add this 
+```
+XAuthLocation /opt/X11/bin/xauth # or location to X11
+ForwardX11 yes
+ForwardX11Trusted yes
+```
 
 
