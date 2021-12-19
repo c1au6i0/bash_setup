@@ -25,7 +25,7 @@ Install oh-my-zsh plugins:
 - Install `neovim` using `mamba`.
 - Install [vim-plug](https://github.com/junegunn/vim-plug).
 Start `vim` and `:PlugUpdate!` to install plugins.
-
+Check also on how to import plug_snapshot.lock
 ## Other
 
 In projects where you are using `{renv}` install `nvimcom` using

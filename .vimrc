@@ -1,6 +1,7 @@
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
+" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -9,45 +10,55 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'preservim/nerdcommenter'
-
 Plug 'vim-python/python-syntax'
-let g:python_highlight_all = 1
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
 
-" Any valid git URL is allowed
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" ncm2------------------------------------------------------------------
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 
-" Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'gaalcaras/ncm-R'
 
-" Using a non-default branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+if !has('nvim')
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-" Plug 'fatih/vim-go', { 'tag': '*' }
+" Optional: for snippet support
+" Further configuration might be required, read below
+Plug 'sirver/UltiSnips'
+Plug 'ncm2/ncm2-ultisnips'
 
-" Plugin options
-" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+" Optional: better Rnoweb support (LaTeX completion)
+Plug 'lervag/vimtex'
+" ncm2 -----
 
-" Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+call plug#end()
 
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+set encoding=UTF-8
 
 " Vertical Scroll
 set mouse=a
 
-
-" Initialize plugin system
-call plug#end()
-
 set backspace=indent,eol,start
+let g:python_highlight_all=1
+let g:python3_host_prog='/home/clz4002/miniconda3/bin/python3'
+
 
 filetype plugin on
+" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 " Theme
 syntax on
@@ -67,6 +78,7 @@ let R_min_editor_width = 120
 " nerdcommenter -------------------- 
 let g:NERDSpaceDelims = 1
 
+
 " Snakemake ------------------------
 " https://github.com/ShaiberAlon/snakemake-vim
 au BufNewFile,BufRead Snakefile set syntax=snakemake
@@ -74,3 +86,5 @@ au BufNewFile,BufRead *.rules set syntax=snakemake
 au BufNewFile,BufRead *.snakefile set syntax=snakemake
 au BufNewFile,BufRead *.snake set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
+
+
