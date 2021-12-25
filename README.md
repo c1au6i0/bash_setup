@@ -10,6 +10,7 @@ General Set up:
 - Install [Bioconda](https://github.com/ohmybash/oh-my-bash).
 - Install [mamba](https://github.com/mamba-org/mamba).
 - Install `zsh`: `mamba install zsh`.
+- Install `nodejs` that is required by some `vim` plutins: `mamba install nodejs`.
 - Install [oh-my-zsh](https://ohmyz.sh/).
 
 Install oh-my-zsh plugins:
@@ -20,16 +21,19 @@ Install oh-my-zsh plugins:
 - Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md).
 
 
-- Copy `.bashrc`, `.zshrc` and `.vimrc` to home directory.
+- Copy `.bashrc`, `.zshrc` and `.vimrc`, `start_lualine.vim` to home directory.
 - Copy `mybin` in the home.
 - Install `neovim` using `mamba`.
 - Install [vim-plug](https://github.com/junegunn/vim-plug).
 Start `vim` and `:PlugUpdate!` to install plugins.
 Check also on how to import plug_snapshot.lock
+
 ## Other
 
 In projects where you are using `{renv}` install `nvimcom` using
 `devtools::install("~/.vim/plugged/Nvim-R/R/nvimcom")`
+Install also `reticulate` using `conda` and follow https://rstudio.github.io/renv/articles/python.html 
+to set up the project with `renv`.
 
 In your .ssh/config in your local machine add this 
 ```

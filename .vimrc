@@ -21,10 +21,15 @@ Plug 'preservim/nerdcommenter'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Tabs
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
 
+Plug 'nvim-lualine/lualine.nvim'
 
 " ALE
 Plug 'w0rp/ale'
+
 
 call plug#end()
 " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -36,6 +41,8 @@ inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 set encoding=UTF-8
+
+source ~/start_lualine.vim
 
 " Vertical Scroll
 set mouse=a
