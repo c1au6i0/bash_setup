@@ -30,6 +30,14 @@ Plug 'nvim-lualine/lualine.nvim'
 " ALE
 Plug 'w0rp/ale'
 
+" Scroll
+Plug 'dstein64/nvim-scrollview'
+
+" Brackets
+Plug 'jiangmiao/auto-pairs'
+
+" Float Terminal
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -39,17 +47,22 @@ call plug#end()
 set shortmess+=c
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 set encoding=UTF-8
 
 source ~/start_lualine.vim
 
-" Vertical Scroll
+" Mouse 
 set mouse=a
 
 " NERDTree -------------------------------------------------------------------
-
 nmap <F6> :NERDTreeToggle<CR>
+
+" ALE
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace']
+\}
 
 
 " Theme ----------------------------
@@ -61,7 +74,7 @@ colorscheme desert
 
 " Language Client NeoVim
 " Assign control =
-let R_nvimpager = "horizontal"
+" let R_nvimpager = "horizontal"
 let R_assign = 0
 
 " R Window anways vertical
