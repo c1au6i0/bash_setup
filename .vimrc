@@ -25,10 +25,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 
-Plug 'nvim-lualine/lualine.nvim'
+" Plug 'nvim-lualine/lualine.nvim'
 
 " ALE
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'on':  'ALEToggle' }
 
 " Scroll
 Plug 'dstein64/nvim-scrollview'
@@ -38,6 +38,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " Rainbow
 Plug 'luochen1990/rainbow'
+
 " Float Terminal
 Plug 'voldikss/vim-floaterm'
 
@@ -50,13 +51,14 @@ call plug#end()
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
 set shortmess+=c
+set tabstop=2 shiftwidth=2 expandtab
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 set encoding=UTF-8
 
-source ~/start_lualine.vim
+" source ~/start_lualine.vim
 
 " Mouse 
 set mouse=a
@@ -64,13 +66,16 @@ set mouse=a
 " NERDTree -------------------------------------------------------------------
 nmap <F6> :NERDTreeToggle<CR>
 
-" ALE
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace']
-\}
+" "  ALE
+" let g:ale_fixers = {
+" \   '*': []
+" \}
+"
+let g:ale_fix_on_save = 0
+let g:ale_enabled = 0
 
-" Rainbow -------------------------- 
-let g:rainbow_active = 1 
+" Rainbow --------------------------
+let g:rainbow_active = 1
 let g:rainbow_conf = {
 \	'separately': {
 \		'nerdtree': 0,
@@ -131,5 +136,6 @@ au BufNewFile,BufRead *.rules set syntax=snakemake
 au BufNewFile,BufRead *.snakefile set syntax=snakemake
 au BufNewFile,BufRead *.snake set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
+
 
 

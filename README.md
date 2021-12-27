@@ -11,6 +11,7 @@ General Set up:
 - Install [mamba](https://github.com/mamba-org/mamba).
 - Install `zsh`: `mamba install zsh`.
 - Install `nodejs` that is required by some `vim` plutins: `mamba install nodejs`.
+- Install `tmux`: `mamba install tmux`.
 - Install [oh-my-zsh](https://ohmyz.sh/).
 
 Install oh-my-zsh plugins:
