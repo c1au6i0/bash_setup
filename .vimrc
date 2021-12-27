@@ -36,8 +36,13 @@ Plug 'dstein64/nvim-scrollview'
 " Brackets
 Plug 'jiangmiao/auto-pairs'
 
+" Rainbow
+Plug 'luochen1990/rainbow'
 " Float Terminal
 Plug 'voldikss/vim-floaterm'
+
+" Git
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -64,6 +69,13 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 
+" Rainbow -------------------------- 
+let g:rainbow_active = 1 
+let g:rainbow_conf = {
+\	'separately': {
+\		'nerdtree': 0,
+\	}
+\}
 
 " Theme ----------------------------
 syntax on
