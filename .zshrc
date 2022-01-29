@@ -137,4 +137,3 @@ export PATH
 # Plugins -----
 # Autojump
 [[ -s /home/clz4002/.autojump/etc/profile.d/autojump.sh ]] && source /home/clz4002/.autojump/etc/profile.d/autojump.sh
-

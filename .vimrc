@@ -25,7 +25,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 
-" Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 " ALE
 Plug 'w0rp/ale', { 'on':  'ALEToggle' }
@@ -45,6 +45,12 @@ Plug 'voldikss/vim-floaterm'
 " Git
 Plug 'tpope/vim-fugitive'
 
+" Theme
+" Plug 'morhetz/gruvbox'
+
+" Indent
+Plug 'Yggdroot/indentLine' 
+
 call plug#end()
 " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -58,7 +64,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 set encoding=UTF-8
 
-" source ~/start_lualine.vim
+source ~/start_lualine.vim
 
 " Mouse 
 set mouse=a
@@ -81,6 +87,11 @@ let g:rainbow_conf = {
 \		'nerdtree': 0,
 \	}
 \}
+
+" Terminal
+let g:floaterm_keymap_toggle = '<F12>'
+" let g:floaterm_width = 0.9
+" let g:floaterm_height = 0.9
 
 " Theme ----------------------------
 syntax on
@@ -138,4 +149,5 @@ au BufNewFile,BufRead *.snake set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
 
 
-
+" Theme
+" autocmd vimenter * ++nested colorscheme gruvbox

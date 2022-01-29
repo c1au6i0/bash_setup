@@ -9,7 +9,14 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
+# BEGIN ANSIBLE MANAGED BLOCK
+# if scu compute, load spack package manager
+if [[ $(hostname) == *"scu-node"* || $(hostname) == *"scu-vis"* ]] ; then
+  if [ -f /software/spack/share/spack/setup-env.sh ] ; then
+    . /software/spack/share/spack/setup-env.sh
+  fi
+fi
+# END ANSIBLE MANAGED BLOCK
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -26,9 +33,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
 # Starts zsh
 if [ "$SSH_TTY" ]
 then
-   exec /home/clz4002/miniconda3/bin/zsh
+  exec /home/clz4002/miniconda3/bin/zsh
 fi
+
 

@@ -21,10 +21,11 @@ Install oh-my-zsh plugins:
 - Install [k](https://github.com/supercrabtree/k)
 - Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md).
 
-
+Set up `neovim` and other custom scripts.
+- Install `lua` that is used by the vim plagin `lualine`: `mamba install lua`
 - Copy `.bashrc`, `.zshrc` and `.vimrc`, `start_lualine.vim` to home directory.
 - Copy `mybin` in the home.
-- Install `neovim` using `mamba`.
+- Install `neovim` using `mamba`: `mamba install neovim`.
 - Install [vim-plug](https://github.com/junegunn/vim-plug).
 Start `vim` and `:PlugUpdate!` to install plugins.
 Check also on how to import plug_snapshot.lock

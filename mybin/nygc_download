@@ -1,0 +1,19 @@
+#!/bin/bash
+# Script to download data a from NYGC and send email
+set -e
+set -u
+
+# folder used to download data
+FOLDER_S=$1
+EMAIL_TO=${2:-clz4002@med.cornell.edu}
+
+scp -vr marchionnil-2270@scp.nygenome.org:$FOLDER_S /athena/marchionnilab/scratch/lab_data/sharedData/covidseq/
+
+echo 'Data downloaded!!!'
+
+BASE_FOLDER="$(basename -- $FOLDER_S)"
+chmod -R 770 /athena/marchionnilab/scratch/lab_data/sharedData/covidseq/$BASE_FOLDER
+
+mail  -s "done" clz4002@med.cornell.edu <<< 'Data of NYGC downloaded!'
+
+
