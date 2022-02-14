@@ -7,7 +7,7 @@ General Set up:
 
 
 
-- Install [Bioconda](https://github.com/ohmybash/oh-my-bash).
+- Install [Bioconda](https://bioconda.github.io/user/install.html).
 - Install [mamba](https://github.com/mamba-org/mamba).
 - Install `zsh`: `mamba install zsh`.
 - Install `nodejs` that is required by some `vim` plutins: `mamba install nodejs`.
